@@ -11,7 +11,7 @@ If a change in the HTML is detected, "Spotter" automatically sends an email to t
 <p>1. Clone the project</p>
 
 ```
-git clone https://github.com/SkrrBoy/Shownger
+git clone https://github.com/SkrrBoy/Spotter
 ```
 
 <p>2. Install dependencies</p>
@@ -58,3 +58,17 @@ npm install pm2 -g
 pm2 start main.js
 ```
 More info > https://pm2.keymetrics.io/docs/usage/quick-start/
+
+<h1>🚀 Future updates</h1>
+
+- [ ] Change the main options without having to edit the files directly
+- [ ] Select the CONCRETE element to be analyzed. At the moment it analyzes all the html 
+- [ ] Push notification alerts on mobile phones (Switch)
+
+<h1>⚠️ Disclamer</h1>
+<p>The purpose of this GitHub repository is solely for personal learning and growth. I have no intention of presenting this project as a replacement or competition to any other existing projects or software. The code and documentation contained within this repository are provided as-is, with no guarantees or warranties of any kind.
+
+While I welcome any contributions, feedback, or suggestions, please understand that this project is not intended to be a fully developed or comprehensive solution. It is simply a platform for me to store and share my learning progress.
+
+Thank you for your understanding and cooperation.</p>
+
