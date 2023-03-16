@@ -2,17 +2,12 @@ const fetch = require("node-fetch");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const nodemailer = require("nodemailer");
+const fs = require('fs')
 require("dotenv").config();
 
-const url = "http://127.0.0.1:5500/";
-let first = "";
+const url = "";
 
-const test = () => {
-    fetch(url)
-      .then((res) => res.text())
-      .then((first) => {
-      });
-  }
+let lastHtml = fs.readFileSync('data.html', { encoding: 'utf8'}) ?? null;
 
 const transporter = nodemailer.createTransport({
   service: "Gmail",
@@ -39,21 +34,31 @@ function sendEmail() {
   });
 }
 
-function checkForChanges() {
-  fetch(url)
-    .then((res) => res.text())
-    .then((second) => {
-      if (second !== first) {
-        console.log("Se ha detectado un cambio en la página");
-        first = second;
-        sendEmail();
-      } else {
-        console.log("No hay cambios en la página");
-      }
-    })
-    .catch((err) => console.error(err));
+const save = (newData) => {
+  lastHtml = newData
+  fs.writeFileSync('data.html', lastHtml)
 }
 
-setInterval(() => {
-  checkForChanges();
+async function checkForChanges() {
+  try {
+    const response = await fetch(url);
+    const data = await response.text();
+    if (lastHtml === null) {
+      save(data)
+    } else if (data !== lastHtml) {
+      console.log("Se ha detectado un cambio en la página");
+      save(data)
+      sendEmail();
+    } else {
+      console.log("No hay cambios en la página");
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+setInterval(async () => {
+  await checkForChanges();
 }, 3000);
+
+
