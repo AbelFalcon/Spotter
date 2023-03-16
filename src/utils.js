@@ -2,15 +2,13 @@ const fetch = require('node-fetch')
 const fs = require('fs')
 const { transporter } = require('./config')
 
-
+const url = ''
 let lastHtml = fs.readFileSync('data/data.html', { encoding: 'utf8' }) ?? null
 
 function sendEmail () {
   const mailOptions = {
     from: 'example@gmail.com',
     to: 'example@gmail.com',
-    from: 'megaomega175@gmail.com',
-    to: 'abelfalconespino@gmail.com',
     subject: 'The page has been updated',
     text: url
   }
