@@ -58,3 +58,9 @@ npm install pm2 -g
 pm2 start main.js
 ```
 More info > https://pm2.keymetrics.io/docs/usage/quick-start/
+
+<h1>🚀 Future updates</h1>
+
+- [ ] Change the main options without having to edit the files directly
+- [ ] Select the CONCRETE element to be analyzed. At the moment it analyzes all the html 
+- [ ] Push notification alerts on mobile phones (Switch)
