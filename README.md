@@ -11,7 +11,7 @@ If a change in the HTML is detected, "Spotter" automatically sends an email to t
 <p>1. Clone the project</p>
 
 ```
-git clone https://github.com/SkrrBoy/Shownger
+git clone https://github.com/SkrrBoy/Spotter
 ```
 
 <p>2. Install dependencies</p>
