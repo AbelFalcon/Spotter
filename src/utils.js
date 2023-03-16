@@ -2,7 +2,6 @@ const fetch = require('node-fetch')
 const fs = require('fs')
 const { transporter } = require('./config')
 
-const url = ''
 
 let lastHtml = fs.readFileSync('data/data.html', { encoding: 'utf8' }) ?? null
 
@@ -10,8 +9,10 @@ function sendEmail () {
   const mailOptions = {
     from: 'example@gmail.com',
     to: 'example@gmail.com',
-    subject: 'PAGE UPDATE',
-    text: 'PAGE UPDATE'
+    from: 'megaomega175@gmail.com',
+    to: 'abelfalconespino@gmail.com',
+    subject: 'The page has been updated',
+    text: url
   }
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -35,11 +36,11 @@ async function checkForChanges () {
     if (lastHtml === null) {
       save(data)
     } else if (data !== lastHtml) {
-      console.log('> Page update detected')
+      console.log('\x1b[32m%s\x1b[0m', '> The page has been updated')
       save(data)
       sendEmail()
     } else {
-      console.log('No page changes')
+      console.log('\x1b[31m%s\x1b[0m', '> There have been no changes')
     }
   } catch (error) {
     throw new Error(error)
