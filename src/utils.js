@@ -1,26 +1,26 @@
-const fetch = require("node-fetch");
+const fetch = require('node-fetch')
 const fs = require('fs')
 const { transporter } = require('./config')
 
-const url = "http://example.com";
+const url = ''
 
-let lastHtml = fs.readFileSync('data/data.html', { encoding: 'utf8'}) ?? null;
+let lastHtml = fs.readFileSync('data/data.html', { encoding: 'utf8' }) ?? null
 
-function sendEmail() {
+function sendEmail () {
   const mailOptions = {
-    from: "example@gmail.com",
-    to: "example@gmail.com",
-    subject: "PAGE UPDATE",
-    text: "PAGE UPDATE",
-  };
+    from: 'example@gmail.com',
+    to: 'example@gmail.com',
+    subject: 'PAGE UPDATE',
+    text: 'PAGE UPDATE'
+  }
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error(error);
+      console.error(error)
     } else {
-      console.log("Email has been send. " + info.response);
+      console.log('Email has been send. ' + info.response)
     }
-  });
+  })
 }
 
 const save = (newData) => {
@@ -28,21 +28,21 @@ const save = (newData) => {
   fs.writeFileSync('data/data.html', lastHtml)
 }
 
-async function checkForChanges() {
+async function checkForChanges () {
   try {
-    const response = await fetch(url);
-    const data = await response.text();
+    const response = await fetch(url)
+    const data = await response.text()
     if (lastHtml === null) {
       save(data)
     } else if (data !== lastHtml) {
-      console.log("> Page update detected");
+      console.log('> Page update detected')
       save(data)
-      sendEmail();
+      sendEmail()
     } else {
-      console.log("No page changes");
+      console.log('No page changes')
     }
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error)
   }
 }
 
