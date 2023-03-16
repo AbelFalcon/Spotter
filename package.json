@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "esm": "^3.2.25",
+    "jsdom": "^21.1.1",
+    "node-fetch": "^2.6.1",
+    "nodemailer": "^6.9.1",
+    "onesignal-node": "^3.4.0",
+    "run": "^1.4.0"
+  }
+}

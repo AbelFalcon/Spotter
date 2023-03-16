@@ -1,4 +1,9 @@
-# Logs
+# Others
+index.html
+
+# auth
+.env
+
 logs
 *.log
 npm-debug.log*
