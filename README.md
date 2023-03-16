@@ -11,7 +11,7 @@ If a change in the HTML is detected, "Spotter" automatically sends an email to t
 <p>1. Clone the project</p>
 
 ```
-git clone https://github.com/SkrrBoy/Shownger
+git clone https://github.com/SkrrBoy/Spotter
 ```
 
 <p>2. Install dependencies</p>
@@ -33,7 +33,7 @@ EMAIL_USER = pedro@gmail.com
 EMAIL_PASS = skaj231 (Google Aplication Password not normal passwod)
 ```
 
-<p>Change GMAIL // FROM // TO (index.js)</p>
+<p>Change GMAIL // FROM // TO (/src/index.js)</p>
 
 ```
 from: "example@gmail.com",
