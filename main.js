@@ -19,8 +19,8 @@ const transporter = nodemailer.createTransport({
 
 function sendEmail() {
   const mailOptions = {
-    from: "megaomega175@gmail.com",
-    to: "abelfalconespino@gmail.com",
+    from: "example@gmail.com",
+    to: "example@gmail.com",
     subject: "Se ha detectado un cambio en la página",
     text: "Se ha detectado un cambio en la página",
   };
@@ -59,6 +59,6 @@ async function checkForChanges() {
 
 setInterval(async () => {
   await checkForChanges();
-}, 3000);
+}, 600000);
 
 
