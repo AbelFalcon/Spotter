@@ -1,4 +1,7 @@
 const { checkForChanges } = require('./utils')
+const { checkconnection } = require('./discord.js')
+
+checkconnection()
 
 setInterval(async () => {
   await checkForChanges()

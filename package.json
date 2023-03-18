@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "chalk": "^5.2.0",
+    "discord.js": "^14.8.0",
     "dotenv": "^16.0.3",
     "esm": "^3.2.25",
     "jsdom": "^21.1.1",

@@ -1,8 +1,12 @@
 const fetch = require('node-fetch')
 const fs = require('fs')
 const { transporter } = require('./config')
+const { sendMsg } = require('./discord.js')
 
-const url = ''
+// const { verify } = require('./discord')
+
+const url = '' // Specify the URL to analyze
+
 let lastHtml = fs.readFileSync('data/data.html', { encoding: 'utf8' }) ?? null
 
 function sendEmail () {
@@ -35,8 +39,9 @@ async function checkForChanges () {
       save(data)
     } else if (data !== lastHtml) {
       console.log('\x1b[32m%s\x1b[0m', '> The page has been updated')
-      save(data)
-      sendEmail()
+      save(data) // Save the new html for future checks
+      sendEmail() // Send Email to specify enail address
+      sendMsg() // Send advice to discord channel
     } else {
       console.log('\x1b[31m%s\x1b[0m', '> There have been no changes')
     }
