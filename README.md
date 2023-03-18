@@ -31,17 +31,18 @@ npm install
 
 ```
 EMAIL_USER = pedro@gmail.com
-EMAIL_PASS = skaj231 (Google Aplication Password not normal passwod)
+EMAIL_PASS = (Google Aplication Password not normal passwod)
+TOKEN = Discord token, only if you want to use it.
 ```
 
-<p>Change GMAIL // FROM // TO (/src/index.js)</p>
+<p>Change GMAIL // FROM // TO (/src/utils.js)</p>
 
 ```
 from: "example@gmail.com",
 to: "example@gmail.com",
 ```
 
-<p>Enter the website in the url const (index.js)</p>
+<p>Enter the website in the url const (utils.js)</p>
 
 ```
 const url = "";
@@ -50,21 +51,23 @@ const url = "";
 <p>Run</p>
 
 ```
-node main.js
+node index.js
 ```
 <p> (Optional) Run in background</p>
 
 ```
 npm install pm2 -g
-pm2 start main.js
+pm2 start index.js
 ```
 More info > https://pm2.keymetrics.io/docs/usage/quick-start/
 
 <h1>🚀 Future updates</h1>
 
+- [✔] Discord Integration
 - [ ] Change the main options without having to edit the files directly
 - [ ] Select the CONCRETE element to be analyzed. At the moment it analyzes all the html 
 - [ ] Push notification alerts on mobile phones (Switch)
+
 
 <h1>⚠️ Disclamer</h1>
 <p>The purpose of this GitHub repository is solely for personal learning and growth. I have no intention of presenting this project as a replacement or competition to any other existing projects or software. The code and documentation contained within this repository are provided as-is, with no guarantees or warranties of any kind.
