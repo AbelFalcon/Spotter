@@ -20,10 +20,6 @@ git clone https://github.com/SkrrBoy/Spotter
 ```
 npm i
 ```
-OR
-```
-npm install
-```
 
 <h2>Usage:</h2>
 
@@ -65,7 +61,7 @@ More info > https://pm2.keymetrics.io/docs/usage/quick-start/
 
 - [✔] Discord Integration
 - [ ] Change the main options without having to edit the files directly
-- [ ] Select the CONCRETE element to be analyzed. At the moment it analyzes all the html 
+- [ ] Select the CONCRETE element to be analyzed. At the moment it analyzes all the html
 - [ ] Push notification alerts on mobile phones (Switch)
 
 
