@@ -1,8 +1,11 @@
-const { checkForChanges } = require('./utils')
-const { checkconnection } = require('./discord.js')
+const { checkForChanges } = require("./utils")
+const { checkconnection } = require("./discord.js")
+require("dotenv").config()
 
 checkconnection()
 
+const refresh_time = process.env.UPDATE_INTERVAL
+
 setInterval(async () => {
   await checkForChanges()
-}, 600000) // 10m on ms
+}, refresh_time)
